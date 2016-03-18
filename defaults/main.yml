@@ -17,3 +17,8 @@ java_download_path: /tmp
 java_download_from_oracle: true
 java_remove_download: true
 
+# Installation directory for non-Mac OS X platforms.
+java_install_dir: /usr/java
+
+# The Java installation directory is created with this group.
+java_admin_group: root

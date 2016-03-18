@@ -3,18 +3,6 @@
 # set necessary role variables.
 #
 
-- name: set java installation directory and admin group on non-Mac OS X platforms
-  set_fact:
-    java_install_dir: /usr/java
-    java_admin_group: root
-  when: ansible_os_family != 'Darwin'
-
-- name: set java installation directory and admin group on Mac OS X
-  set_fact:
-    java_install_dir: /usr/local/java
-    java_admin_group: admin
-  when: ansible_os_family == 'Darwin'
-
 - name: set java architecture
   set_fact:
     jdk_arch: "{{ 'i586' if ansible_architecture == 'i386' else 'x64'}}"

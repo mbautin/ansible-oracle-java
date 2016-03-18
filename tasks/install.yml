@@ -65,6 +65,7 @@
 - name: check if "java_sdk" target exists
   stat: path=/usr/lib/jvm/java
   register: filecheck
+  when: ansible_os_family != "Darwin"
 
 - name: alternatives link for "java_sdk"
   alternatives: name=java_sdk link=/usr/lib/jvm/java  path="{{ java_install_dir }}/default"
