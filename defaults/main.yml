@@ -16,3 +16,4 @@ java_subversion: 74
 java_download_path: /tmp
 java_download_from_oracle: true
 java_remove_download: true
+

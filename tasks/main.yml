@@ -3,6 +3,9 @@
 # Top-level installer for Oracle JDK.
 #
 
+- name: debug
+  debug: msg="java_version={{ java_version }} java_subversion={{ java_subversion }}"
+
 - name: precondition - java_version
   fail: msg="ERROR - required variable 'java_version' missing."
   when: java_version is not defined
