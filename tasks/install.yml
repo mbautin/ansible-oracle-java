@@ -69,8 +69,7 @@
 
 - name: alternatives link for "java_sdk"
   alternatives: name=java_sdk link=/usr/lib/jvm/java  path="{{ java_install_dir }}/default"
-  when: filecheck.stat.exists
-  when: ansible_os_family != "Darwin"
+  when: filecheck.stat.exists and ansible_os_family != "Darwin"
 
 - name: remove temporary downloaded files, if requested
   file: path={{ item }} state=absent
